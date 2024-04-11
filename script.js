@@ -23,27 +23,9 @@ player2Score.textContent = 0;
 
 btnRolDice.addEventListener("click", () => {
   let diceNumber = Math.floor(Math.random() * 6) + 1;
-  console.log(diceNumber);
 
-  switch (diceNumber) {
-    case 1:
-      dice.setAttribute("src", "dice-1.png");
-      break;
-    case 2:
-      dice.setAttribute("src", "dice-2.png");
-      break;
-    case 3:
-      dice.setAttribute("src", "dice-3.png");
-      break;
-    case 4:
-      dice.setAttribute("src", "dice-4.png");
-      break;
-    case 5:
-      dice.setAttribute("src", "dice-5.png");
-      break;
-    case 6:
-      dice.setAttribute("src", "dice-6.png");
-  }
+  console.log(diceNumber);
+  setDiceImage(diceNumber);
 
   if (player1.isActive) {
     console.log("Player1 is active");
@@ -81,4 +63,26 @@ const resetScores = function () {
   player2Score.textContent = 0;
   player1CurrentScore.textContent = 0;
   player2CurrentScore.textContent = 0;
+};
+
+const setDiceImage = function (diceNumber) {
+  switch (diceNumber) {
+    case 1:
+      dice.setAttribute("src", "dice-1.png");
+      break;
+    case 2:
+      dice.setAttribute("src", "dice-2.png");
+      break;
+    case 3:
+      dice.setAttribute("src", "dice-3.png");
+      break;
+    case 4:
+      dice.setAttribute("src", "dice-4.png");
+      break;
+    case 5:
+      dice.setAttribute("src", "dice-5.png");
+      break;
+    case 6:
+      dice.setAttribute("src", "dice-6.png");
+  }
 };
