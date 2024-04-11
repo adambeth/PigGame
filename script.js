@@ -62,8 +62,6 @@ btnHold.addEventListener("click", () => {
     player1.currentScore = 0;
     player1.isActive = false;
     player2.isActive = true;
-    // player1.score += Number(player1CurrentScore.textContent);
-    // console.log(player1.score, player1.currentScore);
   } else {
     console.log("inside");
     console.log(player2.score, player2.currentScore);
@@ -83,6 +81,10 @@ btnNewGame.addEventListener("click", () => {
 
 const resetScores = function () {
   console.log("Starting New Game");
+  player1.score = 0;
+  player2.score = 0;
+  player1.currentScore = 0;
+  player2.currentScore = 0;
   player1Score.textContent = 0;
   player2Score.textContent = 0;
   player1CurrentScore.textContent = 0;
@@ -90,23 +92,5 @@ const resetScores = function () {
 };
 
 const setDiceImage = function (diceNumber) {
-  switch (diceNumber) {
-    case 1:
-      dice.setAttribute("src", "dice-1.png");
-      break;
-    case 2:
-      dice.setAttribute("src", "dice-2.png");
-      break;
-    case 3:
-      dice.setAttribute("src", "dice-3.png");
-      break;
-    case 4:
-      dice.setAttribute("src", "dice-4.png");
-      break;
-    case 5:
-      dice.setAttribute("src", "dice-5.png");
-      break;
-    case 6:
-      dice.setAttribute("src", "dice-6.png");
-  }
+  dice.setAttribute("src", `dice-${diceNumber}.png`);
 };
